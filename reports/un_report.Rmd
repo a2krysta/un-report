@@ -1,0 +1,38 @@
+---
+title: "UN Report on relationship between GDP and Life Expectancy"
+author: "Krysta December"
+date: "1/12/2021"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r packages}
+library(tidyverse) #really only care about ggplot
+```
+
+
+This report was prepared to the attention of the United Nations. It analyzes the relationship between a country's GDP, its life expectancy and CO2 emissions. Our goal is to determine to what degree a country’s economic strength or weakness may be related to its public health status and impact on climate pollution. We hypothesize that both life expectancy and CO2 emissions increase with a country's GDP.
+
+```{r data}
+gapminder_1997 <- read_csv("../data/gapminder_1997.csv")
+```
+
+```{r gdp_lifeexp_1997}
+gapminder_1997 %>% 
+  ggplot() +
+  aes(x=gdpPercap, y=lifeExp) +
+  labs(x = 'GDP per Capita', y= 'Life Expectancy', 
+       title = "Do People in Wealthy Countries Live Longer?") +
+  geom_point(show.legend = FALSE) +
+  theme_light() +
+  aes(color = continent) +
+  scale_color_brewer(palette = 'Set2') +
+  aes(size = pop/1000000) +
+  labs (size = "Population (in millions)")
+```
+
