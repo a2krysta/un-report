@@ -1,0 +1,20 @@
+---
+title: "Untitled"
+author: "Krysta December"
+date: "1/12/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
++ R script
++ *piping*
++ __*ggplot2*__
+
+1. **R script**
+1. *piping*
+1. ***ggplot2***
+
+[R Markdown Cheatsheet](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
